@@ -1,0 +1,6 @@
+FROM node:alpine:3.18
+WORKDIR /app
+COPY package*json ./
+EXPOSE 30001
+COPY . .
+CMD [ "npm install", "npm run start:dev" ]
