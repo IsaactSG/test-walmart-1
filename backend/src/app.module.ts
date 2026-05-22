@@ -4,6 +4,7 @@ import { ExpensesService } from './expenses/expenses.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Type } from 'class-transformer';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ExpenseEntity } from './expenses/entities/expense.entity';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         type: 'postgres',
         url: config.get<string>('DATABASE_URL'),
         synchronize: true,
+        entities: [ExpenseEntity],
         autoLoadEntities: true,
       })
     })],
