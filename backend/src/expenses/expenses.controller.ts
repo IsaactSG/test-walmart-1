@@ -22,8 +22,8 @@ export class ExpensesController {
     return this.expensesService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateExpenseDto: UpdateExpenseDto) {
+  @Patch(':id/status')
+  update(@Param('id/status') id: string, @Body() updateExpenseDto: UpdateExpenseDto) {
     return this.expensesService.update(id, updateExpenseDto);
   }
 }
